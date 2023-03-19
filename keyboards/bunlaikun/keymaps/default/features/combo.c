@@ -8,6 +8,9 @@ enum combos {
   ER_TAB,
   SD_SFT,
   DF_ENT,
+  GUID_ENT,
+  ALTF_ENT,
+
   XC_CP,
   CV_V,
   WS_AT,
@@ -47,6 +50,9 @@ const uint16_t PROGMEM ab_combo[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM er_combo[] = {KC_E, KC_R, COMBO_END};
 const uint16_t PROGMEM sd_combo[] = {KC_S, KC_D, COMBO_END};
 const uint16_t PROGMEM df_combo[] = {KC_D, KC_F, COMBO_END};
+const uint16_t PROGMEM guid_combo[] = {KC_D, KC_LGUI, COMBO_END};
+const uint16_t PROGMEM altf_combo[] = {KC_LALT, KC_F, COMBO_END};
+
 const uint16_t PROGMEM xc_combo[] = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM cv_combo[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM ws_combo[] = {KC_W, KC_S, COMBO_END};
@@ -84,6 +90,9 @@ combo_t key_combos[] = {
   [ER_TAB]  = COMBO(er_combo, KC_TAB),
   [SD_SFT]  = COMBO(sd_combo, KC_LSFT),
   [DF_ENT]  = COMBO(df_combo, KC_ENT),
+  [GUID_ENT]  = COMBO(guid_combo, KC_ENT),
+  [ALTF_ENT]  = COMBO(altf_combo, KC_ENT),
+
   [XC_CP]   = COMBO(xc_combo, LCTL(KC_C)),
   [CV_V]    = COMBO(cv_combo, LCTL(KC_V)),
   [WS_AT]   = COMBO(ws_combo, KC_AT),
