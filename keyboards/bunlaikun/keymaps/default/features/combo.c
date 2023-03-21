@@ -7,6 +7,7 @@ enum combos {
   WE_ESC,
   ER_TAB,
   SD_SFT,
+
   DF_ENT,
   GUID_ENT,
   ALTF_ENT,
@@ -49,6 +50,7 @@ uint16_t COMBO_LEN = COMBO_LENGTH;
 const uint16_t PROGMEM ab_combo[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM er_combo[] = {KC_E, KC_R, COMBO_END};
 const uint16_t PROGMEM sd_combo[] = {KC_S, KC_D, COMBO_END};
+
 const uint16_t PROGMEM df_combo[] = {KC_D, KC_F, COMBO_END};
 const uint16_t PROGMEM guid_combo[] = {KC_D, KC_LGUI, COMBO_END};
 const uint16_t PROGMEM altf_combo[] = {KC_LALT, KC_F, COMBO_END};
@@ -89,6 +91,7 @@ combo_t key_combos[] = {
   [WE_ESC]  = COMBO(ab_combo, KC_ESC),
   [ER_TAB]  = COMBO(er_combo, KC_TAB),
   [SD_SFT]  = COMBO(sd_combo, KC_LSFT),
+
   [DF_ENT]  = COMBO(df_combo, KC_ENT),
   [GUID_ENT]  = COMBO(guid_combo, KC_ENT),
   [ALTF_ENT]  = COMBO(altf_combo, KC_ENT),
