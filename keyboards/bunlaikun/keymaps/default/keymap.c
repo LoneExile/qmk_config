@@ -64,14 +64,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_FN] = LAYOUT(
 //      ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────────┬─────────────┬──────────────┬──────────────┬──────────────╮
-//      │   F12    │    F7    │    F8    │    F9    │  PSCRN   │   │    KC_NO     │   KC_NO     │    KC_NO     │   KC_NO      │    KC_NO     │
+//      │   F12    │    F7    │    F8    │    F9    │  PSCRN   │   │     x        │     x       │      x       │     x        │      x       │
             KC_F12,    KC_F7,     KC_F8,     KC_F9,    KC_PSCR,        KC_NO,         KC_NO,         KC_NO,        KC_NO,          KC_NO,
 //      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────────┼─────────────┼──────────────┼──────────────┼──────────────┤
-//      │   F11    │    F4    │    F5    │    F6    │  NUMLOCK │   │   KC_NO      │    RMETA    │    RALT      │     RCTRL    │   RSHIFT     │
-            KC_F11,    KC_F4,     KC_F5,     KC_F6,    KC_NUM,        KC_NO,         KC_RGUI,      KC_RALT,      KC_RCTL,       KC_RSFT,
+//      │   F11    │    F4    │    F5    │    F6    │  NUMLOCK │   │     x        │    RMETA    │    RALT      │     RCTRL    │   RSHIFT     │
+            KC_F11,    KC_F4,     KC_F5,     KC_F6,    KC_NUM,         KC_NO,         KC_RGUI,      KC_RALT,      KC_RCTL,       KC_RSFT,
 //      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────────┼─────────────┼──────────────┼──────────────┼──────────────┤
-//      │   F10    │    F1    │    F2    │    F3    │  KC_NO   │   │   KC_NO      │  KC_NO      │     KC_NO    │     KC_NO    │     KC_NO    │
-            KC_F10,    KC_F1,     KC_F2,     KC_F3,    KC_NO,          KC_NO,        KC_NO,           KC_NO,         KC_NO,         KC_NO,
+//      │   F10    │    F1    │    F2    │    F3    │    x     │   │     x        │     x       │      x       │     x        │      x       │
+            KC_F10,    KC_F1,     KC_F2,     KC_F3,    KC_NO,          KC_NO,         KC_NO          KC_NO,        KC_NO,          KC_NO,
 //      ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────────┴─────────────┴──────────────┴──────────────┴──────────────╯
 //                                  ╭─────────────┬────────────╮   ╭────────────┬─────────────╮
 //                                  │     Space   │  Esc       │   │  Enter     │  Backspace  │
@@ -79,34 +79,39 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                  ╰─────────────┴────────────╯   ╰────────────┴─────────────╯
     ),
 
-    // [_MOUSE] = LAYOUT(
+    [_MOUSE] = LAYOUT(
 //      ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-//      │   X      │   X      │   X      │   X      │   X      │   │   ESC    │   X      │  MOVE_UP │   X      │   X      │
+//      │   X      │  BTN1    │  BTN2    │  BTN3    │   X      │   │   ESC    │   X      │  MOVE_UP │   X      │   X      │
+          KC_NO,     KC_BTN1,   KC_BTN2,   KC_BTN3,     KC_NO,         KC_ESC,    KC_NO,     KC_MS_U,   KC_NO,     KC_NO,
 //      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
 //      │   X      │   X      │   X      │   X      │   X      │   │   X      │ MOVE_LEFT│ MOVE_DOWN│MOVE_RIGHT│   X      │
+          KC_NO,     KC_NO,      KC_NO,     KC_NO,     KC_NO,         KC_NO,     KC_MS_L,   KC_MS_D,   KC_MS_R,   KC_NO,
 //      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-//      │   X      │   X      │   X      │   X      │   X      │   │   X      │  PG_DN   │  PG_UP   │   X      │   X      │
+//      │   X      │   X      │   X      │   X      │   X      │   │  WH_L    │  WH_DN   │  WH_UP   │  WH_R    │   X      │
+          KC_NO,     KC_NO,      KC_NO,     KC_NO,     KC_NO,        KC_WH_L,    KC_WH_D,   KC_WH_U,   KC_WH_R,   KC_NO,
 //      ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                                  ╭─────────────┬────────────╮   ╭────────────┬─────────────╮
 //                                  │     Space   │  Esc       │   │  Enter     │  Backspace  │
-                                        // KC_SPC,      KC_ESC,          KC_ENT,      KC_BSPC
+                                        KC_SPC,      KC_ESC,          KC_ENT,      KC_BSPC
 //                                  ╰─────────────┴────────────╯   ╰────────────┴─────────────╯
-    // ),
+    ),
 
-    // [_NAV] = LAYOUT(
-    //      ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+    [_NAV] = LAYOUT(
+//      ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
 //      │  BASE    │   THAI   │  MOUSE   │  MEDIA   │  FN      │   │  REDO    │  PASTE   │  COPY    │  CUT     │  UNDO    │
+          KC_NO,      KC_NO,     KC_NO,     KC_NO,     KC_NO,        KC_NO,      KC_NO,     KC_NO,     KC_NO,     KC_NO,
 //      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
 //      │  LSHIFT  │  LCTRL   │  LALT    │  LMETA   │  NUM     │   │  LEFT    │  DOWN    │    UP    │  RIGHT   │  CAPS    │
+          KC_LSFT,    KC_LCTL,   KC_LALT,   KC_LGUI,   KC_NO,        KC_LEFT,    KC_DOWN,   KC_UP,    KC_RIGHT,  KC_CAPS,
 //      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
 //      │  X       │  X       │  X       │  X       │    X     │   │  HOME    │  PG_DN   │  PG_UP   │  END     │  INS     │
+          KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_NO,        KC_HOME,    KC_PGDN,   KC_PGUP,   KC_END,    KC_INS,
 //      ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                                  ╭─────────────┬────────────╮   ╭────────────┬─────────────╮
 //                                  │     Space   │  Esc       │   │  Enter     │  Backspace  │
-                                        // KC_SPC,      KC_ESC,          KC_ENT,      KC_BSPC
+                                        KC_SPC,      KC_ESC,          KC_ENT,      KC_BSPC
 //                                  ╰─────────────┴────────────╯   ╰────────────┴─────────────╯
-    // ),
-
+    ),
 };
 
 #ifdef RGBLIGHT_ENABLE
