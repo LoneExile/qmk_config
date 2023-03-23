@@ -22,7 +22,8 @@ enum layers {
     _NUM = 1,
     _FN = 2,
     _MOUSE = 3,
-    _NAV = 4,
+    _RGB = 4,
+    _NAV = 5,
 };
 
 
@@ -34,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           KC_Q,      KC_W,       KC_E,      KC_R,     KC_T,           KC_Y,      KC_U,     KC_I,       KC_O,     KC_P,
 //      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
 //      │  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │  ' "     │
-          KC_A, MT(MOD_LCTL,KC_S), MT(MOD_LALT,KC_D), MT(MOD_LGUI,KC_F), KC_G, KC_H, RGUI_T(KC_J), RALT_T(KC_K), RCTL_T(KC_L), KC_QUOT,
+          KC_A, MT(MOD_LCTL,KC_S), MT(MOD_LALT,KC_D), MT(MOD_LGUI,KC_F), KC_G, KC_H, MT(MOD_RGUI,KC_J), MT(MOD_RALT,KC_K), MT(MOD_RCTL,KC_L), KC_QUOT,
 //      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
 //      │  X       │  X       │  C       │  V       │  B       │   │  N       │  M       │  , <     │  . >     │  CAPS_W  │
           KC_Z,      KC_X,       KC_C,      KC_V,     KC_B,           KC_N,      KC_M,     KC_COMM,    KC_DOT,    CW_TOGG,
@@ -71,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             KC_F11,    KC_F4,     KC_F5,     KC_F6,    KC_NUM,         KC_NO,         KC_RGUI,      KC_RALT,      KC_RCTL,       KC_RSFT,
 //      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────────┼─────────────┼──────────────┼──────────────┼──────────────┤
 //      │   F10    │    F1    │    F2    │    F3    │    x     │   │     x        │     x       │      x       │     x        │      x       │
-            KC_F10,    KC_F1,     KC_F2,     KC_F3,    KC_NO,          KC_NO,         KC_NO          KC_NO,        KC_NO,          KC_NO,
+            KC_F10,    KC_F1,     KC_F2,     KC_F3,    KC_NO,          KC_NO,         KC_NO,         KC_NO,        KC_NO,          KC_NO,
 //      ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────────┴─────────────┴──────────────┴──────────────┴──────────────╯
 //                                  ╭─────────────┬────────────╮   ╭────────────┬─────────────╮
 //                                  │     Space   │  Esc       │   │  Enter     │  Backspace  │
@@ -96,6 +97,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //                                  ╰─────────────┴────────────╯   ╰────────────┴─────────────╯
     ),
 
+    [_RGB] = LAYOUT(
+//      ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+//      │  RGB_TOG │    X     │  RGB_HUI │  RGB_SAI │   X      │   │  X       │  X       │  X       │  X       │  X       │
+          RGB_TOG,    KC_NO,   RGB_HUI,   RGB_SAI,     KC_NO,         KC_NO,    KC_NO,     KC_NO,   KC_NO,     KC_NO,
+//      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+//      │  RGB_MOD │  RGB_SAD │  RGB_VAI │  RGB_VAD │  RGB_SAI │   │  X       │  X       │  X       │  X       │  X       │
+          RGB_MOD,    RGB_SAD,   RGB_VAI,   RGB_VAD,   RGB_SAI,       KC_NO,    KC_NO,     KC_NO,   KC_NO,   KC_NO,
+//      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+//      │  RGB_RMOD│    X     │  RGB_SPI │  RGB_SPD │   X      │   │  X       │  X       │  X       │  X       │  X       │
+          RGB_RMOD,   KC_NO,     RGB_SPI,   RGB_SPD,   KC_NO,         KC_NO,    KC_NO,     KC_NO,   KC_NO,   KC_NO,
+//      ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
+//                                  ╭─────────────┬────────────╮   ╭────────────┬─────────────╮
+//                                  │     Space   │  Esc       │   │  Enter     │  Backspace  │
+                                        KC_SPC,      KC_ESC,          KC_ENT,      KC_BSPC
+//                                  ╰─────────────┴────────────╯   ╰────────────┴─────────────╯
+    ),
     [_NAV] = LAYOUT(
 //      ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
 //      │  BASE    │   THAI   │  MOUSE   │  MEDIA   │  FN      │   │  REDO    │  PASTE   │  COPY    │  CUT     │  UNDO    │

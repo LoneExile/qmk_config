@@ -14,10 +14,21 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-// #pragma once
+#pragma once
 
-// #ifdef RGBLIGHT_ENABLE
-// #   define RGBLIGHT_EFFECT_BREATHING
-// #endif
+// Not yet available in `keymap.json` format
+#ifdef RGB_MATRIX_ENABLE
+#    define RGB_DISABLE_WHEN_USB_SUSPENDED
+#    define RGB_MATRIX_KEYPRESSES
+#    define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
+#    define ENABLE_RGB_MATRIX_SOLID_SPLASH
+#    define ENABLE_RGB_MATRIX_RAINBOW_BEACON
+#endif
 
-// #define COMBO_COUNT 1
+// Not yet available in `keymap.json` format
+#ifdef MOUSEKEY_ENABLE
+     // The default is 100
+#    define MOUSEKEY_WHEEL_INTERVAL 50
+     // The default is 40
+#    define MOUSEKEY_WHEEL_TIME_TO_MAX 100
+#endif

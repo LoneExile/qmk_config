@@ -14,13 +14,11 @@
 
 SRC += features/combo.c
 
-# RGB Matrix is enabled at the revision level,
-# while we use the regular RGB underglow for testing
-# RGB_MATRIX_ENABLE = no
-
 OLED_ENABLE = yes
 RGBLIGHT_ENABLE = yes
 WPM_ENABLE = yes
 COMBO_ENABLE = yes
 CAPS_WORD_ENABLE = yes
 ENCODER_ENABLE = yes
+RGB_MATRIX_ENABLE = yes
+RGBLIGHT_ENABLE = no
