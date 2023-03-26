@@ -29,7 +29,6 @@ enum combos {
   IO_RCBR,
   JK_LPRN,
   KL_SFT,
-  // TODO: )
   MLEN_LBRC,
   COMDOT_RBRC,
   OL_DLR,
@@ -78,7 +77,6 @@ const uint16_t PROGMEM ui_combo[] = {KC_U, KC_I, COMBO_END};
 const uint16_t PROGMEM io_combo[] = {KC_I, KC_O, COMBO_END};
 const uint16_t PROGMEM jk_combo[] = {MT(MOD_RGUI,KC_J), MT(MOD_RALT,KC_K), COMBO_END};
 const uint16_t PROGMEM kl_combo[] = {MT(MOD_RALT,KC_K), MT(MOD_RCTL,KC_L), COMBO_END};
-  // TODO: )
 const uint16_t PROGMEM mlen_lbrc_combo[] = {KC_M, KC_COMM, COMBO_END};
 const uint16_t PROGMEM comdot_rbrc_combo[] = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM ol_dlr_combo[] = {KC_O, MT(MOD_RCTL,KC_L), COMBO_END};
@@ -120,9 +118,7 @@ combo_t key_combos[] = {
     [UI_LCBR]   = COMBO(ui_combo, KC_LCBR),
     [IO_RCBR]   = COMBO(io_combo, KC_RCBR),
     [JK_LPRN]   = COMBO(jk_combo, LPRN_SHIFT_RPRN),
-    // [JK_LPRN]   = COMBO(jk_combo, KC_LPRN),
     [KL_SFT]   = COMBO(kl_combo, OSM(MOD_RSFT)),
-  // TODO: )
     [MLEN_LBRC] = COMBO(mlen_lbrc_combo, KC_LBRC),
     [COMDOT_RBRC] = COMBO(comdot_rbrc_combo, KC_RBRC),
     [OL_DLR] = COMBO(ol_dlr_combo, KC_DLR),
