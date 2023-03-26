@@ -30,6 +30,15 @@ tap_dance_action_t tap_dance_actions[] = {
   [TD_PLAY_SKIP] = ACTION_TAP_DANCE_DOUBLE(KC_MPLY, KC_MNXT)
 };
 
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case TD(TD_PLAY_SKIP):
+            return TAPPING_TERM + 300;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
 

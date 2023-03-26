@@ -32,6 +32,7 @@
 #define OLED_TIMEOUT 0
 
 #define TAPPING_TERM 200
+#define TAPPING_TERM_PER_KEY
 
 #define SPLIT_WPM_ENABLE
 
