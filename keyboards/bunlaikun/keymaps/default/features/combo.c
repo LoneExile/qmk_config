@@ -7,6 +7,7 @@ enum combos {
   DC_BSLS,
   SD_SFT,
   DF_ENT,
+  RT_STAB,
 
   XC_CP,
   CV_V,
@@ -55,6 +56,7 @@ const uint16_t PROGMEM ed_combo[] = {KC_E, MT(MOD_LALT,KC_D), COMBO_END};
 const uint16_t PROGMEM sd_combo[] = {MT(MOD_LCTL,KC_S), MT(MOD_LALT,KC_D), COMBO_END};
 const uint16_t PROGMEM dc_combo[] = {MT(MOD_LALT,KC_D), KC_C, COMBO_END};
 const uint16_t PROGMEM df_combo[] = {MT(MOD_LALT,KC_D), MT(MOD_LGUI,KC_F), COMBO_END};
+const uint16_t PROGMEM rt_combo[] = {KC_R, KC_T, COMBO_END};
 
 const uint16_t PROGMEM xc_combo[] = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM cv_combo[] = {KC_C, KC_V, COMBO_END};
@@ -92,6 +94,7 @@ combo_t key_combos[] = {
 // left
   [WE_ESC]  = COMBO(ab_combo, KC_ESC),
   [ER_TAB]  = COMBO(er_combo, KC_TAB),
+  [RT_STAB] = COMBO(rt_combo, S(KC_TAB)),
   [ED_HASH] = COMBO(ed_combo, KC_HASH),
   [DC_BSLS] = COMBO(dc_combo, KC_BSLS),
   [SD_SFT]  = COMBO(sd_combo, OSM(MOD_LSFT)),
