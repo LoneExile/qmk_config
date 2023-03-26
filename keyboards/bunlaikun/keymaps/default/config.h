@@ -22,5 +22,7 @@
 // Turns off the OLED screen after 60000ms
 #define OLED_TIMEOUT 0
 
-#define TAPPING_TERM 500
+#define TAPPING_TERM 200
+
+#define SPLIT_WPM_ENABLE
 

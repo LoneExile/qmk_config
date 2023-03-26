@@ -20,7 +20,7 @@
 #include "features/combo.c"
 #include "features/encoder.c"
 #include "features/rgb.c"
-#include "oled/oled.c"
+#include "oled/init.c"
 
 enum {
   TD_PLAY_SKIP,
@@ -85,8 +85,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_MOUSE] = LAYOUT(
 //      ╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-//      │   X      │  BTN1    │  BTN2    │  BTN3    │   X      │   │   ESC    │   X      │  MOVE_UP │   X      │   X      │
-          KC_NO,     KC_BTN1,   KC_BTN2,   KC_BTN3,     KC_NO,         KC_ESC,    KC_NO,     KC_MS_U,   KC_NO,     KC_NO,
+//      │   X      │  BTN1    │  BTN3    │  BTN2    │   X      │   │   ESC    │   X      │  MOVE_UP │   X      │   X      │
+          KC_NO,     KC_BTN1,   KC_BTN3,   KC_BTN2,     KC_NO,         KC_ESC,    KC_NO,     KC_MS_U,   KC_NO,     KC_NO,
 //      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
 //      │   X      │   X      │   X      │   X      │   X      │   │   X      │ MOVE_LEFT│ MOVE_DOWN│MOVE_RIGHT│   X      │
           KC_NO,     KC_NO,      KC_NO,     KC_NO,     KC_NO,         KC_NO,     KC_MS_L,   KC_MS_D,   KC_MS_R,   KC_NO,
@@ -137,14 +137,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         /* KEYBOARD PET STATUS START */
+        case MT(MOD_LCTL,KC_S):
+        case MT(MOD_RCTL,KC_S):
         case KC_LCTL:
         case KC_RCTL:
+            // ocean_dream
+            // is_calm = (record->event.pressed) ? true : false;
             if (record->event.pressed) {
                 isSneaking = true;
             } else {
                 isSneaking = false;
             }
             break;
+        case LT(_NUM,KC_SPC):
         case KC_SPC:
             if (record->event.pressed) {
                 isJumping  = true;
