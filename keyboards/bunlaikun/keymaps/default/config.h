@@ -36,3 +36,4 @@
 
 #define SPLIT_WPM_ENABLE
 
+#define COMBO_TERM 40
