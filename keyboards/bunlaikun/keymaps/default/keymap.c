@@ -18,6 +18,10 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case TD(TD_PLAY_SKIP):
             return TAPPING_TERM + 300;
+        // case LT(_NAV, KC_ESC):
+        //     return TAPPING_TERM - 50;
+        // case LT(_NUM,KC_SPC):
+        //     return TAPPING_TERM - 50;
         default:
             return TAPPING_TERM;
     }
