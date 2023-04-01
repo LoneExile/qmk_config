@@ -6,6 +6,11 @@
 #include "features/rgb.c"
 #include "oled/init.c"
 
+#define THUMB_0 LT(_NUM,KC_SPC)
+#define THUMB_1 MO(_NAV)
+#define THUMB_2 TD(TD_PLAY_SKIP)
+#define THUMB_3 KC_BSPC
+
 enum {
   TD_PLAY_SKIP,
 };
@@ -18,10 +23,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case TD(TD_PLAY_SKIP):
             return TAPPING_TERM + 300;
-        // case LT(_NAV, KC_ESC):
-        //     return TAPPING_TERM - 50;
-        // case LT(_NUM,KC_SPC):
-        //     return TAPPING_TERM - 50;
         default:
             return TAPPING_TERM;
     }
@@ -42,7 +43,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //      ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                                  ╭─────────────┬────────────╮   ╭────────────┬─────────────╮
 //                                  │     Space   │  NAV       │   │ PLAY/PAUSE │  Backspace  │
-                                    LT(_NUM,KC_SPC),LT(_NAV, KC_ESC), TD(TD_PLAY_SKIP),      KC_BSPC
+                                         THUMB_0,   THUMB_1,          THUMB_2,     THUMB_3
 //                                  ╰─────────────┴────────────╯   ╰────────────┴─────────────╯
     ),
 
@@ -59,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //      ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                                  ╭─────────────┬────────────╮   ╭────────────┬─────────────╮
 //                                  │     Space   │  NAV       │   │ PLAY/PAUSE │  Backspace  │
-                                    LT(_NUM,KC_SPC),LT(_NAV, KC_ESC), TD(TD_PLAY_SKIP),      KC_BSPC
+                                         THUMB_0,   THUMB_1,          THUMB_2,     THUMB_3
 //                                  ╰─────────────┴────────────╯   ╰────────────┴─────────────╯
     ),
 
@@ -76,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //      ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────────┴─────────────┴──────────────┴──────────────┴──────────────╯
 //                                  ╭─────────────┬────────────╮   ╭────────────┬─────────────╮
 //                                  │     Space   │  NAV       │   │ PLAY/PAUSE │  Backspace  │
-                                    LT(_NUM,KC_SPC),LT(_NAV, KC_ESC), TD(TD_PLAY_SKIP),      KC_BSPC
+                                         THUMB_0,   THUMB_1,          THUMB_2,     THUMB_3
 //                                  ╰─────────────┴────────────╯   ╰────────────┴─────────────╯
     ),
 
@@ -93,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //      ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                                  ╭─────────────┬────────────╮   ╭────────────┬─────────────╮
 //                                  │     Space   │  NAV       │   │ PLAY/PAUSE │  Backspace  │
-                                    LT(_NUM,KC_SPC),LT(_NAV, KC_ESC), TD(TD_PLAY_SKIP),      KC_BSPC
+                                         THUMB_0,   THUMB_1,          THUMB_2,     THUMB_3
 //                                  ╰─────────────┴────────────╯   ╰────────────┴─────────────╯
     ),
 
@@ -110,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //      ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                                  ╭─────────────┬────────────╮   ╭────────────┬─────────────╮
 //                                  │     Space   │  NAV       │   │ PLAY/PAUSE │  Backspace  │
-                                    LT(_NUM,KC_SPC),LT(_NAV, KC_ESC), TD(TD_PLAY_SKIP),      KC_BSPC
+                                         THUMB_0,   THUMB_1,          THUMB_2,     THUMB_3
 //                                  ╰─────────────┴────────────╯   ╰────────────┴─────────────╯
     ),
     [_NAV] = LAYOUT(
@@ -126,7 +127,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //      ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                                  ╭─────────────┬────────────╮   ╭────────────┬─────────────╮
 //                                  │     Space   │  NAV       │   │ PLAY/PAUSE │  Backspace  │
-                                    LT(_NUM,KC_SPC),LT(_NAV, KC_ESC), TD(TD_PLAY_SKIP),      KC_BSPC
+                                         THUMB_0,   THUMB_1,          THUMB_2,     THUMB_3
 //                                  ╰─────────────┴────────────╯   ╰────────────┴─────────────╯
     ),
 };
