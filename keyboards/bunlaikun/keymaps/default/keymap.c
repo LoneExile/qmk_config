@@ -28,6 +28,15 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
+// BUG: not working
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case QK_MOD_TAP ... QK_MOD_TAP_MAX:
+            return true;
+        default:
+            return false;
+    }
+}
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
 
@@ -136,7 +145,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         /* KEYBOARD PET STATUS START */
         case MT(MOD_LCTL,KC_S):
-        case MT(MOD_RCTL,KC_S):
+        case MT(MOD_RCTL,KC_L):
         case KC_LCTL:
         case KC_RCTL:
             // ocean_dream
