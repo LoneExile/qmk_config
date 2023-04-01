@@ -201,6 +201,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return true;
             }
         /* BACKSPACE DELETE END */
+
+        // '('
         case LPRN_SHIFT_RPRN:
             if (record->event.pressed) {
                 if ((get_mods() | get_oneshot_mods()) & MOD_MASK_SHIFT) {
@@ -222,6 +224,54 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             break;
 
+        // '{'
+        case LCBR_SHIFT_RCBR:
+            if (record->event.pressed) {
+                if ((get_mods() | get_oneshot_mods()) & MOD_MASK_SHIFT) {
+                    // Clear the shift modifier temporarily
+                    uint8_t current_mods = get_mods();
+                    clear_mods();
+                    tap_code16(S(KC_RBRC)); // Send '}' with Shift
+                    // Restore the shift modifier
+                    set_mods(current_mods);
+                } else {
+                    // Add the shift modifier temporarily
+                    uint8_t current_mods = get_mods();
+                    add_mods(MOD_MASK_SHIFT);
+                    tap_code16(S(KC_LBRC)); // Send '{' with Shift
+                    // Restore the original modifiers
+                    set_mods(current_mods);
+                }
+                return false;
+            }
+            break;
+
+        // '['
+        case LBRC_SHIFT_RBRC:
+            if (record->event.pressed) {
+                if ((get_mods() | get_oneshot_mods()) & MOD_MASK_SHIFT) {
+                    uint8_t current_mods = get_mods();
+                    // BUG:
+                    set_mods(current_mods);
+                    clear_mods();
+                    tap_code16(KC_RBRC);
+                    tap_code16(KC_BSPC);
+                    set_mods(current_mods);
+
+                    set_mods(current_mods);
+                    clear_mods();
+                    tap_code16(KC_RBRC);
+                    set_mods(current_mods);
+
+                } else {
+                    uint8_t current_mods = get_mods();
+                    clear_mods();
+                    tap_code16(KC_LBRC);
+                    set_mods(current_mods);
+                }
+                return false;
+            }
+            break;
     }
     return true;
 }
