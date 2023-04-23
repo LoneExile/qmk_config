@@ -217,6 +217,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     tap_code16(S(KC_9)); // Send '(' with Shift
                     // Restore the original modifiers
                     set_mods(current_mods);
+                    unregister_code(KC_LSFT);
                 }
                 return false;
             }
@@ -239,6 +240,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                     tap_code16(S(KC_LBRC)); // Send '{' with Shift
                     // Restore the original modifiers
                     set_mods(current_mods);
+                    unregister_code(KC_LSFT);
                 }
                 return false;
             }

@@ -1,6 +1,7 @@
 enum combos {
 
 // left
+  COMBO_CTRL_A,
   COMBO_ESC,
   COMBO_TAB,
   COMBO_STAB,
@@ -49,6 +50,7 @@ enum custom_keycodes {
 uint16_t COMBO_LEN = COMBO_LENGTH;
 
 // left
+const uint16_t PROGMEM ctrlA_combo[] = {KC_A, MT(MOD_LCTL,KC_S), COMBO_END};
 const uint16_t PROGMEM esc_combo[] = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM tab_combo[] = {KC_W, KC_E, KC_R, COMBO_END};
 const uint16_t PROGMEM stab_combo[] = {KC_U, KC_I, KC_O, COMBO_END};
@@ -87,6 +89,7 @@ const uint16_t PROGMEM ques_combo[] = {KC_O, KC_P, COMBO_END}; // ?
 combo_t key_combos[] = {
 
     // left
+    [COMBO_CTRL_A] = COMBO(ctrlA_combo, LCTL(KC_A)),
     [COMBO_ESC]  = COMBO(esc_combo, KC_ESC),
     [COMBO_TAB]  = COMBO(tab_combo, KC_TAB),
     [COMBO_STAB] = COMBO(stab_combo, S(KC_TAB)),
