@@ -272,6 +272,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 return false;
             }
             break;
+
+      case KC_PSCR:
+      if (record->event.pressed) {
+        // When the KC_PSCR key is pressed
+        tap_code(KC_PSCR); // Send the Print Screen key press
+        layer_clear(); // Clear the current layer
+        layer_on(_BASE); // Go back to the _BASE layer
+      }
+      return false;
     }
     return true;
 }
