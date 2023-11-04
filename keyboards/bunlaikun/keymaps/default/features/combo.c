@@ -10,6 +10,9 @@ enum combos {
   COMBO_LSFT,
   COMBO_ENT,
 
+  COMBO_LSFT_NUM,
+  COMBO_RSFT_NUM,
+
   COMBO_CP,
   COMBO_V,
   COMBO_AT,
@@ -59,6 +62,9 @@ const uint16_t PROGMEM lsft_combo[] = {MT(MOD_LCTL,KC_S), MT(MOD_LALT,KC_D), COM
 const uint16_t PROGMEM bsls_combo[] = {MT(MOD_LALT,KC_D), KC_C, COMBO_END};
 const uint16_t PROGMEM ent_combo[] = {MT(MOD_LALT,KC_D), MT(MOD_LGUI,KC_F), COMBO_END};
 
+const uint16_t PROGMEM lsft_combo_num[] = {KC_LCTL, KC_LALT, COMBO_END};
+const uint16_t PROGMEM rsft_combo_num[] = {KC_5, KC_6, COMBO_END};
+
 const uint16_t PROGMEM copy_combo[] = {KC_X, KC_C, COMBO_END};
 const uint16_t PROGMEM paste_combo[] = {KC_C, KC_V, COMBO_END};
 const uint16_t PROGMEM at_combo[] = {KC_W, MT(MOD_LCTL,KC_S), COMBO_END};
@@ -96,6 +102,9 @@ combo_t key_combos[] = {
     [COMBO_HASH] = COMBO(hash_combo, KC_HASH),
     [COMBO_BSLS] = COMBO(bsls_combo, KC_BSLS),
     [COMBO_LSFT]  = COMBO(lsft_combo, OSM(MOD_LSFT)),
+
+    [COMBO_LSFT_NUM]  = COMBO(lsft_combo_num, OSM(MOD_LSFT)),
+    [COMBO_RSFT_NUM]  = COMBO(rsft_combo_num, OSM(MOD_LSFT)),
 
     [COMBO_ENT]  = COMBO(ent_combo, KC_ENT),
 

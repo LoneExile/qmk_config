@@ -3,7 +3,7 @@
 
 #include "features/combo.c"
 #include "features/encoder.c"
-#include "features/rgb.c"
+#include "features/RGB.c"
 #include "oled/init.c"
 
 #define THUMB_0 LT(_NUM,KC_SPC)

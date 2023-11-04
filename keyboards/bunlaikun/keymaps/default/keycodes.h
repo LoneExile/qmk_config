@@ -1,8 +1,11 @@
-enum layers {
-    _BASE = 0,
-    _NUM = 1,
-    _FN = 2,
-    _MOUSE = 3,
-    _RGB = 4,
-    _NAV = 5,
+#pragma once
+#include "keymap_us_extended.h"
+
+enum custom_layers {
+    _BASE,
+    _NUM,
+    _FN,
+    _MOUSE,
+    _RGB,
+    _NAV,
 };
