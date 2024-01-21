@@ -131,8 +131,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //      │  LSHIFT  │  LCTRL   │  LALT    │  LMETA   │  NUM     │   │  LEFT    │  DOWN    │    UP    │  RIGHT   │  CAPS    │
           KC_LSFT,    KC_LCTL,   KC_LALT,   KC_LGUI,  TG(_NUM),        KC_LEFT,    KC_DOWN,   KC_UP,    KC_RIGHT,  KC_CAPS,
 //      ├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-//      │  X       │  X       │  X       │  X       │  RGB     │   │  HOME    │  PG_DN   │  PG_UP   │  END     │  INS     │
-          KC_NO,     KC_NO,     KC_NO,     KC_NO,     TG(_RGB),        KC_HOME,    KC_PGDN,   KC_PGUP,   KC_END,    KC_INS,
+//      │  X       │  X       │  X       │  RGB     │  RGB     │   │  HOME    │  PG_DN   │  PG_UP   │  END     │  INS     │
+          KC_NO,     KC_NO,     KC_NO,     TG(_RGB),  TG(_NAV),        KC_HOME,    KC_PGDN,   KC_PGUP,   KC_END,    KC_INS,
 //      ╰──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────╯
 //                                  ╭─────────────┬────────────╮   ╭────────────┬─────────────╮
 //                                  │     Space   │  NAV       │   │ PLAY/PAUSE │  Backspace  │
